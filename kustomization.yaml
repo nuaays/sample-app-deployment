@@ -8,12 +8,3 @@ resources:
 images:
 - name: gitopsbook/sample-app
   newTag: v0.1
-EOF
-
-#create .flux.yaml
-cat <<EOF > .flux.yaml
-version: 1
-patchUpdated:
-  generators:
-  - command: kustomize build .
-  patchFile: flux-patch.yaml 
